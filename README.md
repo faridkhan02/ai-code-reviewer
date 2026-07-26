@@ -1,10 +1,10 @@
-# AI Code Reviewer Platform
+# AI Code Reviewer Platform 🚀
 
 Created by **Md Farid Khan**.
 
 A Streamlit-based AI code review application for Python. Upload or paste code and get analysis for bugs, security issues, performance, style, and an AI explanation.
 
-## Project Summary
+## Project Summary 💡
 
 AI Code Reviewer is designed to help developers quickly identify issues in Python source files. It provides:
 
@@ -15,15 +15,15 @@ AI Code Reviewer is designed to help developers quickly identify issues in Pytho
 - style recommendations to improve readability
 - categorized results with guided fixes
 
-## Features
+## Features ✨
 
 - Upload a `.py` file or paste Python code directly.
 - Syntax and parsing validation.
-- Bug detection for common Python issues.
-- Security checks for unsafe functions, hardcoded secrets, and disabled SSL verification.
-- Performance hints for nested loops and large ranges.
-- Style checks for long lines, tab usage, and naming conventions.
-- Categorized review results with suggested fixes.
+- 🐞 Bug detection for common Python issues.
+- 🔒 Security checks for unsafe functions, hardcoded secrets, and disabled SSL verification.
+- ⚡ Performance hints for nested loops and expensive operations.
+- 🎨 Style checks for long lines, tab usage, and naming conventions.
+- 📊 Categorized review results with suggested fixes.
 
 ## Installation
 
@@ -133,7 +133,7 @@ Open `http://localhost:8501` in your browser.
 
 - If a check fails or you see an unexpected exception in the UI, copy the traceback and open an issue in the project with the traceback and the code sample that reproduced it.
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome. Open issues or pull requests for bug fixes, improvements, and new analysis features.
 
