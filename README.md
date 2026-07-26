@@ -86,6 +86,53 @@ streamlit run run.py
 
 Md Farid Khan
 
+## API Keys & Configuration
+
+This project integrates with large language models. By default it uses Google's Gemini (Generative AI) SDK, and an OpenAI key can be configured as an alternative for future use.
+
+- Copy `.env.example` to `.env` and set your keys:
+
+```bash
+cp .env.example .env
+# then edit .env and add your key values
+```
+
+- Environment variables supported (set in `.env`):
+	- `GEMINI_API_KEY` — required for the default Gemini model integration.
+	- `OPENAI_API_KEY` — optional if you plan to use OpenAI in the future.
+	- `OLLAMA_BASE_URL` — optional local URL for Ollama if used.
+	- `GEMINI_MODEL` — override the Gemini model (defaults are in `app/config/setting.py`).
+
+The app loads these variables via `python-dotenv` in `app/config/setting.py`.
+
+## Usage Example
+
+Run the application from the repository root so Python package imports resolve correctly:
+
+```bash
+streamlit run main.py
+```
+
+Alternatively use the provided `run.py` launcher:
+
+```bash
+streamlit run run.py
+```
+
+Open `http://localhost:8501` in your browser.
+
+## Troubleshooting & Solutions
+
+- Issue: `ModuleNotFoundError: No module named 'app'` — Solution: start Streamlit from the repo root (run `streamlit run main.py`), or use `run.py` which configures `sys.path`. Avoid running `streamlit run app/main.py` from inside `app/` unless you add the parent directory to `PYTHONPATH`.
+
+- Issue: `CSS file not found: app/static/css/style.css` — Solution: ensure `app/static/css/style.css` exists and the app is started from the project root. The loader in `app/utils.py` checks `os.path.exists()` using a path built in `app/main.py`.
+
+- Issue: Syntax errors reported for uploaded code — Solution: the analyzer attempts to parse the code with `ast`; fix the indicated syntax error lines in your source and run the review again.
+
+- Issue: Local Git push fails or large binary/venv files included — Solution: ensure `venv/` and other large artifacts are listed in `.gitignore` (this repo includes a `.gitignore`). Do not commit real API keys; use `.env.example` and keep `.env` out of source control.
+
+- If a check fails or you see an unexpected exception in the UI, copy the traceback and open an issue in the project with the traceback and the code sample that reproduced it.
+
 ## License
 
 This project is provided as-is. Feel free to modify the README and code for your own use.
