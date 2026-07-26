@@ -133,6 +133,8 @@ Open `http://localhost:8501` in your browser.
 
 - If a check fails or you see an unexpected exception in the UI, copy the traceback and open an issue in the project with the traceback and the code sample that reproduced it.
 
-## License
+## Contributing
 
-This project is provided as-is. Feel free to modify the README and code for your own use.
+Contributions are welcome. Open issues or pull requests for bug fixes, improvements, and new analysis features.
+
+> Note: this repository does not include a license file. If you plan to reuse or share the code publicly, consider adding a license that matches your needs.
